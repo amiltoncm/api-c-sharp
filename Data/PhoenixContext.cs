@@ -28,5 +28,13 @@ namespace Phoenix.Data
         public DbSet<Phoenix.Models.Regime> Regime { get; set; }
 
         public DbSet<Phoenix.Models.State> State { get; set; }
+
+        public DbSet<Phoenix.Models.DomAddress> DomAddress { get; set; }
+
+        public DbSet<Phoenix.Models.DomElectroAddress> DomElectroAddress { get; set; }
+
+        public DbSet<Phoenix.Models.DomPersonType> DomPersonType { get; set; }
+
+        public DbSet<Phoenix.Models.DomPublicPlace> DomPublicPlace { get; set; }
     }
 }

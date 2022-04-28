@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -11,18 +11,18 @@
   "profiles": {
     "Phoenix": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "applicationUrl": "http://localhost:5206",
+      "launchUrl": "amxsistemas",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "http://localhost:5206",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "amxsistemas",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
