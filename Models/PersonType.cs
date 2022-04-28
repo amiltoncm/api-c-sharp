@@ -2,7 +2,7 @@
 
 namespace Phoenix.Models
 {
-    public class DomPersonType
+    public class PersonType
     {
         private string id;
 

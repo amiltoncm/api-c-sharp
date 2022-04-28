@@ -2,7 +2,7 @@
 
 namespace Phoenix.Models
 {
-    public class DomElectroAddress
+    public class PublicPlace
     {
         [Key]
         public int Id { get; set; }
