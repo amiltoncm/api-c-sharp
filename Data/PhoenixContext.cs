@@ -36,5 +36,9 @@ namespace Phoenix.Data
         public DbSet<Phoenix.Models.PersonType> DomPersonType { get; set; }
 
         public DbSet<Phoenix.Models.PublicPlace> DomPublicPlace { get; set; }
+
+        public DbSet<Phoenix.Models.City> City { get; set; }
+
+        public DbSet<Phoenix.Models.Company> Company { get; set; }
     }
 }

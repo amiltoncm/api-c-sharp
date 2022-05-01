@@ -11,7 +11,6 @@ namespace Phoenix.Models
         [Required]
         [MinLength(4, ErrorMessage = "O campo nome aceita no mínimo {1} caracteres!")]
         [MaxLength(50, ErrorMessage = "O campo nome aceita no máximo {1} caracteres!")]
-
         public string? Name { get; set; }
 
     }
