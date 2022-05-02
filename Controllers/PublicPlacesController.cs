@@ -19,13 +19,13 @@ namespace Phoenix.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PublicPlace>>> GetDomPublicPlace()
         {
-            return await _context.DomPublicPlace.ToListAsync();
+            return await _context.PublicPlace.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<PublicPlace>> GetPublicPlace(int id)
         {
-            var publicPlace = await _context.DomPublicPlace.FindAsync(id);
+            var publicPlace = await _context.PublicPlace.FindAsync(id);
 
             if (publicPlace == null)
             {
@@ -67,7 +67,7 @@ namespace Phoenix.Controllers
         [HttpPost]
         public async Task<ActionResult<PublicPlace>> PostPublicPlace(PublicPlace publicPlace)
         {
-            _context.DomPublicPlace.Add(publicPlace);
+            _context.PublicPlace.Add(publicPlace);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPublicPlace", new { id = publicPlace.Id }, publicPlace);
@@ -76,13 +76,13 @@ namespace Phoenix.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePublicPlace(int id)
         {
-            var publicPlace = await _context.DomPublicPlace.FindAsync(id);
+            var publicPlace = await _context.PublicPlace.FindAsync(id);
             if (publicPlace == null)
             {
                 return NotFound();
             }
 
-            _context.DomPublicPlace.Remove(publicPlace);
+            _context.PublicPlace.Remove(publicPlace);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -90,7 +90,7 @@ namespace Phoenix.Controllers
 
         private bool PublicPlaceExists(int id)
         {
-            return _context.DomPublicPlace.Any(e => e.Id == id);
+            return _context.PublicPlace.Any(e => e.Id == id);
         }
     }
 }

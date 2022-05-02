@@ -1,10 +1,4 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Phoenix.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Phoenix.Data
 {
@@ -31,11 +25,11 @@ namespace Phoenix.Data
 
         public DbSet<Phoenix.Models.AddressType> AddressType { get; set; }
 
-        public DbSet<Phoenix.Models.ElectroAddressType> DomElectroAddress { get; set; }
+        public DbSet<Phoenix.Models.ElectroAddressType> ElectroAddressType { get; set; }
 
-        public DbSet<Phoenix.Models.PersonType> DomPersonType { get; set; }
+        public DbSet<Phoenix.Models.PersonType> PersonType { get; set; }
 
-        public DbSet<Phoenix.Models.PublicPlace> DomPublicPlace { get; set; }
+        public DbSet<Phoenix.Models.PublicPlace> PublicPlace { get; set; }
 
         public DbSet<Phoenix.Models.City> City { get; set; }
 

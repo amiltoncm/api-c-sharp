@@ -3,7 +3,7 @@ using Phoenix.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<PhoenixContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoenixContext") ?? throw new InvalidOperationException("Connection string 'PhoenixContext' not found.")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PhoenixContext") ?? throw new InvalidOperationException("Dados de conexão 'PhoenixContext' não encontrada.")));
 
 // Add services to the container.
 

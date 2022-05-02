@@ -19,13 +19,13 @@ namespace Phoenix.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ElectroAddressType>>> GetDomElectroAddress()
         {
-            return await _context.DomElectroAddress.ToListAsync();
+            return await _context.ElectroAddressType.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ElectroAddressType>> GetElectroAddressType(int id)
         {
-            var electroAddressType = await _context.DomElectroAddress.FindAsync(id);
+            var electroAddressType = await _context.ElectroAddressType.FindAsync(id);
 
             if (electroAddressType == null)
             {
@@ -67,7 +67,7 @@ namespace Phoenix.Controllers
         [HttpPost]
         public async Task<ActionResult<ElectroAddressType>> PostElectroAddressType(ElectroAddressType electroAddressType)
         {
-            _context.DomElectroAddress.Add(electroAddressType);
+            _context.ElectroAddressType.Add(electroAddressType);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetElectroAddressType", new { id = electroAddressType.Id }, electroAddressType);
@@ -76,13 +76,13 @@ namespace Phoenix.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteElectroAddressType(int id)
         {
-            var electroAddressType = await _context.DomElectroAddress.FindAsync(id);
+            var electroAddressType = await _context.ElectroAddressType.FindAsync(id);
             if (electroAddressType == null)
             {
                 return NotFound();
             }
 
-            _context.DomElectroAddress.Remove(electroAddressType);
+            _context.ElectroAddressType.Remove(electroAddressType);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -90,7 +90,7 @@ namespace Phoenix.Controllers
 
         private bool ElectroAddressTypeExists(int id)
         {
-            return _context.DomElectroAddress.Any(e => e.Id == id);
+            return _context.ElectroAddressType.Any(e => e.Id == id);
         }
     }
 }

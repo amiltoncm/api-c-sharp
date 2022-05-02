@@ -19,13 +19,13 @@ namespace Phoenix.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PersonType>>> GetDomPersonType()
         {
-            return await _context.DomPersonType.ToListAsync();
+            return await _context.PersonType.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<PersonType>> GetPersonType(string id)
         {
-            var personType = await _context.DomPersonType.FindAsync(id);
+            var personType = await _context.PersonType.FindAsync(id);
 
             if (personType == null)
             {
@@ -67,7 +67,7 @@ namespace Phoenix.Controllers
         [HttpPost]
         public async Task<ActionResult<PersonType>> PostPersonType(PersonType personType)
         {
-            _context.DomPersonType.Add(personType);
+            _context.PersonType.Add(personType);
             try
             {
                 await _context.SaveChangesAsync();
@@ -90,13 +90,13 @@ namespace Phoenix.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePersonType(string id)
         {
-            var personType = await _context.DomPersonType.FindAsync(id);
+            var personType = await _context.PersonType.FindAsync(id);
             if (personType == null)
             {
                 return NotFound();
             }
 
-            _context.DomPersonType.Remove(personType);
+            _context.PersonType.Remove(personType);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -104,7 +104,7 @@ namespace Phoenix.Controllers
 
         private bool PersonTypeExists(string id)
         {
-            return _context.DomPersonType.Any(e => e.Id == id);
+            return _context.PersonType.Any(e => e.Id == id);
         }
     }
 
